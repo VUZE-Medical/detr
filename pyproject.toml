@@ -1,0 +1,38 @@
+[project]
+name = "Algorithms"
+version = "0.1.0"
+requires-python = ">=3.14"
+dependencies = [
+    "numpy",
+    "scipy",
+
+    "opencv-python",
+    "matplotlib",
+    "pandas",
+    "torch",
+    "torchvision",
+
+    "scikit-learn",
+
+    "onnxruntime-gpu",
+    "onnx",
+
+    "pycocotools",
+    "submitit"
+]
+
+[dependency-groups]
+dev = []
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
+
+[tool.uv.sources]
+torch = [
+  { index = "pytorch-cu130", marker = "sys_platform == 'win32'" },
+]
+torchvision = [
+  { index = "pytorch-cu130", marker = "sys_platform == 'win32'" },
+]

@@ -243,6 +243,10 @@ def main(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser('DETR training and evaluation script', parents=[get_args_parser()])
     args = parser.parse_args()
+
+    args.coco_path = r'D:\VUZE Medical Dropbox\Algorithms\ML2026\coco2017'
+    args.output_dir = r'D:\VUZE Medical Dropbox\Algorithms\ML2026\Detr\Training_results\orig'
+
     if args.output_dir:
         Path(args.output_dir).mkdir(parents=True, exist_ok=True)
     main(args)
